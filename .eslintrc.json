@@ -1,0 +1,39 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 13,
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-console": 0,
+        "no-unused-vars": 1,
+        "no-underscore-dangle": 0,
+        "eol-last": 0,
+        "no-alert": 0,
+        "import/order": 0,
+        "no-restricted-globals": 0,
+        "no-bitwise": 0,
+        "no-param-reassign": 0,
+        "no-tabs": 0,
+        "indent": [ "error", "tab" ],
+        "import/prefer-default-export": 0,
+        "func-names": 0,
+        "no-plusplus": 0,
+        "array-bracket-newline": 1,
+        "array-bracket-spacing": 1,
+        "array-element-newline": 1,
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "only-multiline",
+                "objects": "only-multiline",
+                "imports": "ignore",
+                "exports": "ignore",
+                "functions": "never"
+            }
+        ]
+    }
+}
