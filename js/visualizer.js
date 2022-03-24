@@ -37,7 +37,11 @@ const rerollArray = (length) => {
 }
 
 const startAnimation = (type, speedMult, parent) => {
-	return sort(arr, type, speedMult, parent);
+	new Promise(async () => {
+		document.dispatchEvent(new Event('sorting-start'));
+		await sort(arr, type, speedMult, parent);
+		document.dispatchEvent(new Event('sorting-end'));
+	});
 }
 
 export { rerollArray, startAnimation, };

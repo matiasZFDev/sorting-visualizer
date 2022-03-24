@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sorting algorithms</title>
 	<link rel="stylesheet" href="./index.css">
-	<script src="./index.js" defer></script>
+	<script src="./index.js" type="module" defer></script>
 </head>
 <body>
 	<header class="main-header">
@@ -21,36 +21,41 @@
 					</article>
 					<article class="array-length option" id="array-length">
 						<label for="array-length">Array size</label>
-						<input type="range" min="10" max="1000" value="10" step="1" 
+						<input type="range" min="20" max="200" value="20" step="10" 
 							class="array-length-slider" id="array-length-slider">
-						<output class="length-value">10</output>
+						<output class="length-value" id="length-value">20</output>
 					</article>
 					<article class="speed option" id="speed">
 						<label>Speed</label>
 						<input type="range" min="0.25" max="3" value="1" step="0.25" 
 							class="speed-slider" id="speed-slider">
-						<output class="speed-value">x<span>1</span></output>
+						<output class="speed-value" id="speed-value">x<span>1</span></output>
 					</article>
 				</div>
 			</section>
 			<section class="algorithm-container">
 				<h3>Algorithm</h3>
 				<div class="algorithm">
-					<select name="algorithm" id="algorithm-select" class="algorithm-select">
+					<select name="algorithm" id="sort-select" class="sort-select">
 						<option value="bubble">Bubble sort</option>
 						<option value="selection">Selection sort</option>
 						<option value="insertion">Insertion sort</option>
 						<option value="merge">Merge sort</option>
 						<option value="quick">Quicksort</option>
 					</select>
-					<button class="toggle-animation start" id="toggle-animation">
-						Start
-					</button>
+					<div class="toggle-animation-container">
+						<button class="toggle-animation start" id="toggle-animation">
+							Start
+						</button>
+						<output class="already-sorted" id="already-sorted">Already sorted</output>
+					</div>
 				</div>
 			</section>
 		</div>
-		<div class="sort-animation-container" id="sort-animation">
-			<div class="sort-animation" id="sort-animation"></div>
+		<div class="sort-animation-container">
+			<div class="sort-animation" id="sort-animation">
+				<span class="tail"></span>
+			</div>
 			<a href="#explanation" class="learn-more">Learn more</a>
 		</div>
 		<div class="explanation-container" id="explanation">
@@ -139,7 +144,7 @@
 		</div>
 	</footer>
 	<template id="sort-element-template">
-		<div class="sort-element"></div>
+		<span class="sort-element"></span>
 	</template>
 </body>
 </html>
