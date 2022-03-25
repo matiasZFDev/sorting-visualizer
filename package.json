@@ -1,0 +1,20 @@
+{
+  "name": "sorting-algorithms",
+  "version": "1.0.0",
+  "description": "A tool to visualize the principal sort algorithms as bubble sort, insertion sort or quicksort. There are different options like manage array size and display speed.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode development",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "author": "matiasZF",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.4",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
