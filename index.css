@@ -2,6 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap');
 
+:root {
+	--options-title-font-size: calc(0.8vw + 0.6rem);
+	--options-font-size: calc(0.6vw + 0.5rem);
+	--button-size: calc(0.6vw + 0.4rem);
+	--explanation-title-size: calc(2vw + 1.3rem);
+	--explanation-text-size: calc(0.8vw + 0.5rem);
+}
+
 *,
 *:before,
 *:after {
@@ -26,29 +34,31 @@ body {
 main {
 	max-width: 1024px;
 	margin: 0 auto;
+	padding: 0 0.8rem;
 }
 
 .main-header {
 	margin-bottom: 1.6rem;
 	padding-top: 2.15rem;
-	display: flex;
-	justify-content: center;
+	text-align: center;
 }
 
 .main-header h1 {
+	display: inline-block;
 	text-align: center;
-	font-size: 2rem;
-	width: calc(3rem * 6);
-	height: calc(2rem * 1.34);
+	font-size: calc(1.15vw + 1rem);
+	padding: 0 10px;
 	font-weight: 600;
 	color: #B7A3C4;
-	border-bottom: 3px solid #423960;
+	border-bottom: calc(0.2vw + 1.3px) solid #423960;
 	box-shadow: 0 4px 0 0 #0002;
 }
 
 .setup {
 	display: flex;
 	border-radius: 4px;
+	justify-content: space-between;
+	gap: 1rem;
 }
 
 .disable-blur {
@@ -63,7 +73,7 @@ main {
 
 .options-container h3, .algorithm-container h3 {
 	color: #9783A4;
-	font-size: 22px;
+	font-size: var(--options-title-font-size);
 	margin-bottom: 1rem;
 }
 
@@ -71,6 +81,7 @@ main {
 	display: flex;
 	gap: 2rem;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .options .option {
@@ -81,16 +92,21 @@ main {
 
 .options .option label {
 	color: #B7A3C4;
-	font-size: 	1rem;
+	font-size: var(--options-font-size);
 	font-weight: 600;
+}
+
+.options .option input[type="range"] {
+	width: calc(3vw + 3rem);
 }
 
 .options .option output {
 	background-color: #9273a5;
-	padding: 2px 8px;
+	padding: 2px calc(0.5vw);
 	border-radius: 4px;
 	font-weight: 600;
 	color: #2C283D;
+	font-size: var(--options-font-size);
 	letter-spacing: 1px;
 }
 
@@ -98,8 +114,8 @@ main {
 	color: #B7A3C4;
 	background-color: #373050;
 	border-radius: 4px;
-	padding: 8px;
-	font-size: 1rem;
+	padding: calc(0.5vw + 2px);
+	font-size: var(--options-font-size);
 	font-weight: 600;
 	cursor: pointer;
 	transition: filter 0.2s;
@@ -110,8 +126,21 @@ main {
 }
 
 .algorithm-container {
-	margin: 0 auto;
 	flex-basis: 30%;
+	margin-left: auto;
+}
+
+@media (max-width: 800px) {
+	.options-container {
+		flex-basis: 100%;
+	}
+}
+
+@media (max-width: 600px) {
+	.explanation {
+		flex-direction: column !important;
+		align-items: center;
+	}
 }
 
 .sort-select {
@@ -127,6 +156,7 @@ main {
 	outline: none;
 	border-radius: 3px;
 	cursor: pointer;
+	font-size: var(--options-font-size);
 }
 
 .sort-select option {
@@ -138,7 +168,7 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .toggle-animation-container {
@@ -146,7 +176,6 @@ main {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-end;
-	margin: 0 auto;
 	gap: 4px;
 }
 
@@ -158,6 +187,7 @@ main {
 	align-items: center;
 	font-family: 'Inter';
 	font-weight: 600;
+	font-size: var(--button-size);
 	cursor: pointer;
 }
 
@@ -168,7 +198,7 @@ main {
 }
 
 .hide {
-	display: none;
+	display: none !important;
 }
 
 .start {
@@ -182,6 +212,12 @@ main {
 .algorithm .toggle-animation > img {
 	width: 20px;
 	height: 20px;
+}
+
+.header-state {
+	align-items: center;
+	justify-content: center;
+	margin-top: 0.8rem;
 }
 
 .sort-animation-container .learn-more {
@@ -198,12 +234,12 @@ main {
 }
 
 .sort-animation {
-	margin-top: 1rem;
+	margin-top: 0.6rem;
 	height: 360px;
 	background-color: #372f50;
-	padding: 1rem 2rem;
+	padding: 1rem 1rem;
 	display: flex;
-	gap: 4px;
+	gap: 0.4%;
 	align-items: flex-end;
 }
 
@@ -215,7 +251,11 @@ main {
 	background: #f66;
 }
 
-.iterator {
+.pivot {
+	background: #6ff;
+}
+
+.iterator, .waiting {
 	background: #66f;
 }
 
@@ -249,7 +289,7 @@ main {
 
 .explanation-title {
 	color: #C8B1D8;
-	font-size: 48px;
+	font-size: var(--explanation-title-size);
 	margin-bottom: 2rem;
 }
 
@@ -259,12 +299,13 @@ main {
 
 .explanation-text {
 	color: #FFF;
-	padding-top: 1rem;
+	padding-top: 2rem;
 	font-weight: 600;
 	flex-basis: 600px;
 	display: flex;
 	flex-direction: column;
 	gap: 0.8rem;
+	font-size: var(--explanation-text-size);
 }
 
 .highlight {
@@ -275,19 +316,9 @@ main {
 	margin-bottom: 200px;
 }
 
-.explanation-block.what-are-they .explanation > aside img {
-	width: 270px;
+.explanation > aside img {
+	width: calc(10vw + 8rem);
 	height: 220px;
-}
-
-.explanation-block.complexity .explanation > aside img {
-	width: 380px;
-	height: 280px;
-}
-
-.explanation-block.which-to-use .explanation > aside img {
-	width: 380px;
-	height: 130px;
 }
 
 .main-footer {

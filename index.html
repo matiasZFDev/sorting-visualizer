@@ -8,7 +8,7 @@
 	<script src="./index.js" type="module" defer></script>
 </head>
 <body>
-	<header class="main-header">
+	<header class="main-header" id="main-header">
 		<h1>Sorting visualizer</h1>
 	</header>
 	<main>
@@ -33,9 +33,9 @@
 					</article>
 				</div>
 			</section>
-			<section class="algorithm-container">
+			<section class="algorithm-container" id="algorithm-container">
 				<h3>Algorithm</h3>
-				<div class="algorithm">
+				<div class="algorithm" id="algorithm-select">
 					<select name="algorithm" id="sort-select" class="sort-select">
 						<option value="bubble">Bubble sort</option>
 						<option value="selection">Selection sort</option>
@@ -70,7 +70,8 @@
 					<div class="explanation-text">
 						<p>
 							A sorting algorithm is a sequence of instructions to order, essentially
-							non-order data structures as arrays, lists and sets, through comparisons.
+							non-order data structures as arrays, lists and sets, through comparisons
+							or other methods.
 						</p>
 					</div>
 				</div>
