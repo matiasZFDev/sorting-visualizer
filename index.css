@@ -79,7 +79,7 @@ main {
 
 .options {
 	display: flex;
-	gap: 2rem;
+	gap: calc(2vw);
 	align-items: center;
 	flex-wrap: wrap;
 }
@@ -102,7 +102,7 @@ main {
 
 .options .option output {
 	background-color: #9273a5;
-	padding: 2px calc(0.5vw);
+	padding: 2px calc(0.6vw + 1px);
 	border-radius: 4px;
 	font-weight: 600;
 	color: #2C283D;
