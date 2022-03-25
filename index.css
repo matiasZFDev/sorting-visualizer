@@ -326,6 +326,8 @@ main {
 	height: 4rem;
 	font-family: 'Inter';
 	padding: 10px;
+	display: flex;
+	justify-content: center;
 }
 
 .links {
