@@ -1,7 +1,6 @@
 node_modules/
 dist/
 .eslintrc.json
-.babelrc
 webpack.common.js
 webpack.dev.js
 webpack.prod.js
