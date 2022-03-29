@@ -6,7 +6,7 @@ const max = 200;
 const template = document.getElementById('sort-element-template').content;
 const sortAnimation = document.getElementById('sort-animation');
 
-const render = () => {
+const render = async () => {
 	const fragment = document.createDocumentFragment();
 	const displayStyle = getComputedStyle(sortAnimation);
 	const greatestElement = getGreatest(arr);
@@ -23,7 +23,7 @@ const render = () => {
 	}
 
 	sortAnimation.innerHTML = '';
-	sortAnimation.appendChild(fragment)
+	sortAnimation.appendChild(fragment);
 }
 
 const rerollArray = (length) => {
